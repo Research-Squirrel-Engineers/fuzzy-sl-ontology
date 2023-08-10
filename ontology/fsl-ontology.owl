@@ -218,6 +218,12 @@
             rdfs:label "Google Maps"@en .
 
 
+###  http://archaeoinformatics.link/ontology#InhabitedPlace
+:InhabitedPlace rdf:type owl:NamedIndividual ,
+                         :SpatialType ;
+                rdfs:label "inhabited Place"@en .
+
+
 ###  http://archaeoinformatics.link/ontology#Island
 :Island rdf:type owl:NamedIndividual ,
                  :SpatialType ;
@@ -248,10 +254,21 @@
        rdfs:label "Scientific Paper"@en .
 
 
+###  http://archaeoinformatics.link/ontology#RegionCentre
+:RegionCentre rdf:type owl:NamedIndividual ,
+                       :SpatialType ;
+              rdfs:label "Region Centre"@en .
+
+
 ###  http://archaeoinformatics.link/ontology#Sink
 :Sink rdf:type owl:NamedIndividual ,
                :SpatialType ;
       rdfs:label "Sink"@en .
+
+
+###  http://archaeoinformatics.link/ontology#URI
+:URI rdf:type owl:NamedIndividual ,
+              :Source .
 
 
 ###  http://archaeoinformatics.link/ontology#Website
@@ -264,6 +281,12 @@
 :high rdf:type owl:NamedIndividual ,
                :CertaintyType ;
       rdfs:label "high"@en .
+
+
+###  http://archaeoinformatics.link/ontology#iDAIgazetteer
+:iDAIgazetteer rdf:type owl:NamedIndividual ,
+                        :Source ;
+               rdfs:label "iDAI.gazetter"@en .
 
 
 ###  http://archaeoinformatics.link/ontology#low
