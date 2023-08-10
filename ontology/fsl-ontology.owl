@@ -206,6 +206,12 @@
       rdfs:label "Cave"@en .
 
 
+###  http://archaeoinformatics.link/ontology#Coinhoards
+:Coinhoards rdf:type owl:NamedIndividual ,
+                     :Source ;
+            rdfs:label "Coinhoards"@en .
+
+
 ###  http://archaeoinformatics.link/ontology#ExternalRepository
 :ExternalRepository rdf:type owl:NamedIndividual ,
                              :MethodType ;
