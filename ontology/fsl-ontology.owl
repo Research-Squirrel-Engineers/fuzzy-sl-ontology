@@ -120,6 +120,12 @@
         rdfs:label "Source"@en .
 
 
+###  http://archaeoinformatics.link/ontology#SourceType
+:SourceType rdf:type owl:Class ;
+            rdfs:subClassOf :Type ;
+            rdfs:label "Source Type"@en .
+
+
 ###  http://archaeoinformatics.link/ontology#SpatialType
 :SpatialType rdf:type owl:Class ;
              rdfs:subClassOf :Type ;
@@ -190,7 +196,7 @@
 
 ###  http://archaeoinformatics.link/ontology#Book
 :Book rdf:type owl:NamedIndividual ,
-               :Source ;
+               :SourceType ;
       rdfs:label "Book"@en .
 
 
@@ -212,10 +218,16 @@
                 rdfs:label "Geological Site"@en .
 
 
-###  http://archaeoinformatics.link/ontology#GoogleMaps
-:GoogleMaps rdf:type owl:NamedIndividual ,
-                     :MethodType ;
-            rdfs:label "Google Maps"@en .
+###  http://archaeoinformatics.link/ontology#Georeferencing
+:Georeferencing rdf:type owl:NamedIndividual ,
+                         :MethodType ;
+                rdfs:label "Georeferencing"@en .
+
+
+###  http://archaeoinformatics.link/ontology#Image
+:Image rdf:type owl:NamedIndividual ,
+                :SourceType ;
+       rdfs:label "Image"@en .
 
 
 ###  http://archaeoinformatics.link/ontology#InhabitedPlace
@@ -228,12 +240,6 @@
 :Island rdf:type owl:NamedIndividual ,
                  :SpatialType ;
         rdfs:label "Island"@en .
-
-
-###  http://archaeoinformatics.link/ontology#Literature
-:Literature rdf:type owl:NamedIndividual ,
-                     :Source ;
-            rdfs:label "Literature"@en .
 
 
 ###  http://archaeoinformatics.link/ontology#ModernRegion
@@ -250,14 +256,26 @@
 
 ###  http://archaeoinformatics.link/ontology#Paper
 :Paper rdf:type owl:NamedIndividual ,
-                :Source ;
+                :SourceType ;
        rdfs:label "Scientific Paper"@en .
+
+
+###  http://archaeoinformatics.link/ontology#Pleiades
+:Pleiades rdf:type owl:NamedIndividual ,
+                   :Source ;
+          rdfs:label "Pleiades"@en .
 
 
 ###  http://archaeoinformatics.link/ontology#RegionCentre
 :RegionCentre rdf:type owl:NamedIndividual ,
                        :SpatialType ;
               rdfs:label "Region Centre"@en .
+
+
+###  http://archaeoinformatics.link/ontology#RepresentativePoint
+:RepresentativePoint rdf:type owl:NamedIndividual ,
+                              :SpatialType ;
+                     rdfs:label "Representative Point"@en .
 
 
 ###  http://archaeoinformatics.link/ontology#Sink
@@ -268,13 +286,19 @@
 
 ###  http://archaeoinformatics.link/ontology#URI
 :URI rdf:type owl:NamedIndividual ,
-              :Source .
+              :SourceType .
 
 
 ###  http://archaeoinformatics.link/ontology#Website
 :Website rdf:type owl:NamedIndividual ,
-                  :Source ;
+                  :SourceType ;
          rdfs:label "Website"@en .
+
+
+###  http://archaeoinformatics.link/ontology#WikimediaCommons
+:WikimediaCommons rdf:type owl:NamedIndividual ,
+                           :Source ;
+                  rdfs:label "Wikimedia Commons"@en .
 
 
 ###  http://archaeoinformatics.link/ontology#high
