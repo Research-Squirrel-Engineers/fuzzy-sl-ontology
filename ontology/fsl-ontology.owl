@@ -28,6 +28,12 @@
            rdfs:label "has source"@en .
 
 
+###  http://archaeoinformatics.link/ontology#hasSourceType
+:hasSourceType rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :hasSource ;
+               rdfs:label "has source type"@en .
+
+
 ###  http://archaeoinformatics.link/ontology#method
 :method rdf:type owl:ObjectProperty ;
         rdfs:domain :Place ;
@@ -68,6 +74,15 @@
              rdfs:domain :Place ;
              rdfs:range :SpatialType ;
              rdfs:label "has spatial type"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://archaeoinformatics.link/ontology#hasReference
+:hasReference rdf:type owl:DatatypeProperty ;
+              rdfs:label "has reference"@en .
 
 
 #################################################################
@@ -210,6 +225,12 @@
 :Coinhoards rdf:type owl:NamedIndividual ,
                      :Source ;
             rdfs:label "Coinhoards"@en .
+
+
+###  http://archaeoinformatics.link/ontology#Croton
+:Croton rdf:type owl:NamedIndividual ,
+                 :Project ;
+        rdfs:label "Silver Coinage of Croton"@en .
 
 
 ###  http://archaeoinformatics.link/ontology#ExternalRepository
