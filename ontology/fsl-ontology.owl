@@ -1,0 +1,193 @@
+@prefix : <http://archaeoinformatics.link/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://archaeoinformatics.link/ontology#> .
+
+<http://archaeoinformatics.link/ontology#> rdf:type owl:Ontology ;
+                                            owl:imports <http://www.opengis.net/ont/geosparql> ;
+                                            rdfs:label "Fuzzy Spatial Locations Ontology"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://archaeoinformatics.link/ontology#certaintyLevel
+:certaintyLevel rdf:type owl:ObjectProperty ;
+                rdfs:domain :Place ;
+                rdfs:range :CertaintyType ;
+                rdfs:label "certainty level"@en .
+
+
+###  http://archaeoinformatics.link/ontology#hasSource
+:hasSource rdf:type owl:ObjectProperty ;
+           rdfs:domain :Place ;
+           rdfs:range :Source ;
+           rdfs:label "has source"@en .
+
+
+###  http://archaeoinformatics.link/ontology#method
+:method rdf:type owl:ObjectProperty ;
+        rdfs:domain :Place ;
+        rdfs:range :MethodType ;
+        rdfs:label "georeferencing method"@en .
+
+
+###  http://archaeoinformatics.link/ontology#partOf
+:partOf rdf:type owl:ObjectProperty ;
+        rdfs:domain :Place ;
+        rdfs:range :Project ;
+        rdfs:label "part of"@en .
+
+
+###  http://archaeoinformatics.link/ontology#relatedTo
+:relatedTo rdf:type owl:ObjectProperty ;
+           rdfs:domain :Place ;
+           rdfs:range owl:Thing ;
+           rdfs:label "related to"@en .
+
+
+###  http://archaeoinformatics.link/ontology#representativeGeometry
+:representativeGeometry rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+                        rdfs:comment "e.g. centre point"@en ;
+                        rdfs:label "representative Geometry"@en .
+
+
+###  http://archaeoinformatics.link/ontology#siteType
+:siteType rdf:type owl:ObjectProperty ;
+          rdfs:domain :Place ;
+          rdfs:range :SiteType ;
+          rdfs:label "has site type"@en .
+
+
+###  http://archaeoinformatics.link/ontology#spatialType
+:spatialType rdf:type owl:ObjectProperty ;
+             rdfs:domain :Place ;
+             rdfs:range :SpatialType ;
+             rdfs:label "has spatial type"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://archaeoinformatics.link/ontology#CertaintyType
+:CertaintyType rdf:type owl:Class ;
+               rdfs:subClassOf :Type ;
+               rdfs:label "Certainty Type"@en .
+
+
+###  http://archaeoinformatics.link/ontology#Location
+:Location rdf:type owl:Class ;
+          rdfs:subClassOf :Place ;
+          rdfs:label "Location"@en .
+
+
+###  http://archaeoinformatics.link/ontology#MethodType
+:MethodType rdf:type owl:Class ;
+            rdfs:subClassOf :Type ;
+            rdfs:label "Method Type"@en .
+
+
+###  http://archaeoinformatics.link/ontology#Place
+:Place rdf:type owl:Class ;
+       rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+       rdfs:label "Place"@en .
+
+
+###  http://archaeoinformatics.link/ontology#Project
+:Project rdf:type owl:Class ;
+         rdfs:label "Project"@en .
+
+
+###  http://archaeoinformatics.link/ontology#Site
+:Site rdf:type owl:Class ;
+      rdfs:subClassOf :Location ;
+      rdfs:label "Site"@en .
+
+
+###  http://archaeoinformatics.link/ontology#SiteType
+:SiteType rdf:type owl:Class ;
+          rdfs:subClassOf :Type ;
+          rdfs:label "Site Type"@en .
+
+
+###  http://archaeoinformatics.link/ontology#Source
+:Source rdf:type owl:Class ;
+        rdfs:label "Source"@en .
+
+
+###  http://archaeoinformatics.link/ontology#SpatialType
+:SpatialType rdf:type owl:Class ;
+             rdfs:subClassOf :Type ;
+             rdfs:label "Spatial Type"@en .
+
+
+###  http://archaeoinformatics.link/ontology#Type
+:Type rdf:type owl:Class ;
+      rdfs:label "Type"@en .
+
+
+###  http://www.opengis.net/ont/geosparql#Feature
+<http://www.opengis.net/ont/geosparql#Feature> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+                                               rdfs:label "Feature"@en .
+
+
+###  http://www.opengis.net/ont/geosparql#Geometry
+<http://www.opengis.net/ont/geosparql#Geometry> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+                                                rdfs:label "Geometry"@en .
+
+
+###  http://www.opengis.net/ont/geosparql#SpatialObject
+<http://www.opengis.net/ont/geosparql#SpatialObject> rdf:type owl:Class ;
+                                                     rdfs:label "Spatial Object"@en .
+
+
+###  http://www.opengis.net/ont/sf#MultiLineString
+<http://www.opengis.net/ont/sf#MultiLineString> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+                                                rdfs:label "Multi Line"@en .
+
+
+###  http://www.opengis.net/ont/sf#MultiPoint
+<http://www.opengis.net/ont/sf#MultiPoint> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+                                           rdfs:label "Multi Point"@en .
+
+
+###  http://www.opengis.net/ont/sf#MultiPolygon
+<http://www.opengis.net/ont/sf#MultiPolygon> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+                                             rdfs:label "Multi Polygon"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://archaeoinformatics.link/ontology#ArchaeologicalSite
+:ArchaeologicalSite rdf:type owl:NamedIndividual ,
+                             :SiteType .
+
+
+###  http://archaeoinformatics.link/ontology#GeologicalSite
+:GeologicalSite rdf:type owl:NamedIndividual ,
+                         :SiteType .
+
+
+###  http://archaeoinformatics.link/ontology#Literature
+:Literature rdf:type owl:NamedIndividual ,
+                     :Source .
+
+
+###  http://archaeoinformatics.link/ontology#Website
+:Website rdf:type owl:NamedIndividual ,
+                  :Source .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
