@@ -21,6 +21,20 @@
                 rdfs:label "certainty level"@en .
 
 
+###  http://archaeoinformatics.link/ontology#dubiousMatch
+:dubiousMatch rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+              rdfs:label "has a dubious match"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "the match is dubious (e.g. ambiguity)"@en .
+
+
+###  http://archaeoinformatics.link/ontology#georeferencingBy
+:georeferencingBy rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Place ;
+                  rdfs:range <http://xmlns.com/foaf/0.1/Person> ;
+                  rdfs:label "georeferencing done by"@en .
+
+
 ###  http://archaeoinformatics.link/ontology#hasSource
 :hasSource rdf:type owl:ObjectProperty ;
            rdfs:domain :Place ;
@@ -48,6 +62,13 @@
         rdfs:label "part of"@en .
 
 
+###  http://archaeoinformatics.link/ontology#partlyMatch
+:partlyMatch rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+             rdfs:label "has partly match"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "is used to state an associative mapping link between two places, in which one is part of another"@en .
+
+
 ###  http://archaeoinformatics.link/ontology#relatedTo
 :relatedTo rdf:type owl:ObjectProperty ;
            rdfs:domain :Place ;
@@ -69,6 +90,13 @@
           rdfs:label "has site type"@en .
 
 
+###  http://archaeoinformatics.link/ontology#spatialCloseMatch
+:spatialCloseMatch rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+                   rdfs:label "has a spatial close match"@en ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "is used to state an associative mapping link between two places, which are spatially close to each other"@en .
+
+
 ###  http://archaeoinformatics.link/ontology#spatialType
 :spatialType rdf:type owl:ObjectProperty ;
              rdfs:domain :Place ;
@@ -79,6 +107,13 @@
 #################################################################
 #    Data properties
 #################################################################
+
+###  http://archaeoinformatics.link/ontology#georeferencingDesc
+:georeferencingDesc rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Place ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "georeferencing description"@en .
+
 
 ###  http://archaeoinformatics.link/ontology#hasReference
 :hasReference rdf:type owl:DatatypeProperty ;
@@ -187,6 +222,11 @@
                                              rdfs:label "Multi Polygon"@en .
 
 
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
+                                   rdfs:label "Person"@en .
+
+
 #################################################################
 #    Individuals
 #################################################################
@@ -205,8 +245,15 @@
 
 ###  http://archaeoinformatics.link/ontology#ArchaeologicalSite
 :ArchaeologicalSite rdf:type owl:NamedIndividual ,
-                             :SiteType ;
+                             :SiteType ,
+                             :SpatialType ;
                     rdfs:label "Archaeological Site"@en .
+
+
+###  http://archaeoinformatics.link/ontology#Bight
+:Bight rdf:type owl:NamedIndividual ,
+                :SpatialType ;
+       rdfs:label "Bight"@en .
 
 
 ###  http://archaeoinformatics.link/ontology#Book
@@ -269,10 +316,22 @@
         rdfs:label "Island"@en .
 
 
+###  http://archaeoinformatics.link/ontology#Lake
+:Lake rdf:type owl:NamedIndividual ,
+               :SpatialType ;
+      rdfs:label "Lake"@en .
+
+
 ###  http://archaeoinformatics.link/ontology#ModernRegion
 :ModernRegion rdf:type owl:NamedIndividual ,
                        :SpatialType ;
               rdfs:label "Modern Region"@en .
+
+
+###  http://archaeoinformatics.link/ontology#Mountain
+:Mountain rdf:type owl:NamedIndividual ,
+                   :SpatialType ;
+          rdfs:label "Mountain"@en .
 
 
 ###  http://archaeoinformatics.link/ontology#OSM
@@ -285,6 +344,18 @@
 :Paper rdf:type owl:NamedIndividual ,
                 :SourceType ;
        rdfs:label "Scientific Paper"@en .
+
+
+###  http://archaeoinformatics.link/ontology#PaperDesc
+:PaperDesc rdf:type owl:NamedIndividual ,
+                    :Source ;
+           rdfs:label "Description in Paper"@en .
+
+
+###  http://archaeoinformatics.link/ontology#Plateau
+:Plateau rdf:type owl:NamedIndividual ,
+                  :SpatialType ;
+         rdfs:label "Plateau"@en .
 
 
 ###  http://archaeoinformatics.link/ontology#Pleiades
@@ -311,9 +382,21 @@
       rdfs:label "Sink"@en .
 
 
+###  http://archaeoinformatics.link/ontology#Supervolcano
+:Supervolcano rdf:type owl:NamedIndividual ,
+                       :SpatialType ;
+              rdfs:label "Supervolcano"@en .
+
+
 ###  http://archaeoinformatics.link/ontology#URI
 :URI rdf:type owl:NamedIndividual ,
               :SourceType .
+
+
+###  http://archaeoinformatics.link/ontology#UnknownCategory
+:UnknownCategory rdf:type owl:NamedIndividual ,
+                          :SpatialType ;
+                 rdfs:label "Unknown Category"@en .
 
 
 ###  http://archaeoinformatics.link/ontology#Website
