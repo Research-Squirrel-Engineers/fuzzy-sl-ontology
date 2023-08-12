@@ -7,7 +7,8 @@
 @base <http://archaeoinformatics.link/ontology#> .
 
 <http://archaeoinformatics.link/ontology#> rdf:type owl:Ontology ;
-                                            owl:imports <http://www.opengis.net/ont/geosparql> ;
+                                            owl:imports <http://www.opengis.net/ont/geosparql> ,
+                                                        <http://www.w3.org/ns/prov-o-20130430> ;
                                             rdfs:label "Fuzzy Spatial Locations Ontology"@en .
 
 #################################################################
@@ -132,7 +133,7 @@
 
 ###  http://archaeoinformatics.link/ontology#Location
 :Location rdf:type owl:Class ;
-          rdfs:subClassOf :Place ;
+          rdfs:subClassOf <http://www.w3.org/ns/prov#Location> ;
           rdfs:label "Location"@en .
 
 
@@ -150,6 +151,7 @@
 
 ###  http://archaeoinformatics.link/ontology#Project
 :Project rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
          rdfs:label "Project"@en .
 
 
@@ -201,6 +203,7 @@
 
 ###  http://www.opengis.net/ont/geosparql#SpatialObject
 <http://www.opengis.net/ont/geosparql#SpatialObject> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
                                                      rdfs:label "Spatial Object"@en .
 
 
@@ -222,8 +225,17 @@
                                              rdfs:label "Multi Polygon"@en .
 
 
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> .
+
+
+###  http://www.w3.org/ns/prov#Location
+<http://www.w3.org/ns/prov#Location> rdfs:subClassOf :Place .
+
+
 ###  http://xmlns.com/foaf/0.1/Person
 <http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://www.w3.org/ns/prov#Person> ;
                                    rdfs:label "Person"@en .
 
 
