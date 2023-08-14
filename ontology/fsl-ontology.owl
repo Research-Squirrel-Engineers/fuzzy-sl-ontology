@@ -109,11 +109,17 @@
 #    Data properties
 #################################################################
 
-###  http://archaeoinformatics.link/ontology#georeferencingDesc
-:georeferencingDesc rdf:type owl:DatatypeProperty ;
-                    rdfs:domain :Place ;
-                    rdfs:range xsd:string ;
-                    rdfs:label "georeferencing description"@en .
+###  http://archaeoinformatics.link/ontology#activityDesc
+:activityDesc rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Place ;
+              rdfs:range xsd:string ;
+              rdfs:label "activity method description"@en .
+
+
+###  http://archaeoinformatics.link/ontology#certaintyDesc
+:certaintyDesc rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:label "certainty description"@en .
 
 
 ###  http://archaeoinformatics.link/ontology#hasReference
@@ -230,13 +236,29 @@
 
 
 ###  http://www.w3.org/ns/prov#Location
-<http://www.w3.org/ns/prov#Location> rdfs:subClassOf :Place .
+<http://www.w3.org/ns/prov#Location> rdfs:subClassOf <https://pleiades.stoa.org/places/vocab#Location> .
 
 
 ###  http://xmlns.com/foaf/0.1/Person
 <http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
                                    rdfs:subClassOf <http://www.w3.org/ns/prov#Person> ;
                                    rdfs:label "Person"@en .
+
+
+###  https://pleiades.stoa.org/places/vocab#Location
+<https://pleiades.stoa.org/places/vocab#Location> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <https://pleiades.stoa.org/places/vocab#Place> ;
+                                                  rdfs:isDefinedBy <https://pleiades.stoa.org/places/vocab> ;
+                                                  rdfs:label "Plaiades Location"@en ;
+                                                  <http://www.w3.org/2004/02/skos/core#definition> "Locations describe natural or man-made features of the real world."@en .
+
+
+###  https://pleiades.stoa.org/places/vocab#Place
+<https://pleiades.stoa.org/places/vocab#Place> rdf:type owl:Class ;
+                                               rdfs:subClassOf :Place ;
+                                               rdfs:isDefinedBy <https://pleiades.stoa.org/places/vocab> ;
+                                               rdfs:label "Pleiades Place"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#definition> "Places are instances of skos:Concept as well as contexts for Locations and Names."@en .
 
 
 #################################################################
@@ -286,10 +308,10 @@
             rdfs:label "Coinhoards"@en .
 
 
-###  http://archaeoinformatics.link/ontology#Croton
-:Croton rdf:type owl:NamedIndividual ,
-                 :Project ;
-        rdfs:label "Silver Coinage of Croton"@en .
+###  http://archaeoinformatics.link/ontology#CrotonProject
+:CrotonProject rdf:type owl:NamedIndividual ,
+                        :Project ;
+               rdfs:label "Silver Coinage of Croton"@en .
 
 
 ###  http://archaeoinformatics.link/ontology#ExternalRepository
@@ -386,6 +408,12 @@
 :RepresentativePoint rdf:type owl:NamedIndividual ,
                               :SpatialType ;
                      rdfs:label "Representative Point"@en .
+
+
+###  http://archaeoinformatics.link/ontology#River
+:River rdf:type owl:NamedIndividual ,
+                :SpatialType ;
+       rdfs:label "River"@en .
 
 
 ###  http://archaeoinformatics.link/ontology#Sink
