@@ -49,6 +49,11 @@
                rdfs:label "has source type"@en .
 
 
+###  http://archaeoinformatics.link/ontology#image
+:image rdf:type owl:ObjectProperty ;
+       rdfs:label "has image"@en .
+
+
 ###  http://archaeoinformatics.link/ontology#method
 :method rdf:type owl:ObjectProperty ;
         rdfs:domain :Place ;
@@ -294,6 +299,12 @@
 :Book rdf:type owl:NamedIndividual ,
                :SourceType ;
       rdfs:label "Book"@en .
+
+
+###  http://archaeoinformatics.link/ontology#CampanianIgnimbriteProject
+:CampanianIgnimbriteProject rdf:type owl:NamedIndividual ,
+                                     :Project ;
+                            rdfs:label "Campanian Ignimbrite"@en .
 
 
 ###  http://archaeoinformatics.link/ontology#Cave
