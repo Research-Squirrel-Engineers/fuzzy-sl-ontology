@@ -201,9 +201,9 @@ var tree={
           "from": {
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 0,
-              "http://www.w3.org/2002/07/owl#NamedIndividual": 2,
-              "http://fuzzy-sl.squirrel.link/ontology/SiteType": 2,
-              "http://fuzzy-sl.squirrel.link/ontology/SpatialType": 1
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 17,
+              "http://fuzzy-sl.squirrel.link/ontology/SpatialType": 17,
+              "http://fuzzy-sl.squirrel.link/ontology/SiteType": 1
             },
             "http://www.w3.org/2000/01/rdf-schema#range": {
               "instancecount": 0,
@@ -235,8 +235,8 @@ var tree={
         "data": {
           "to": {
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
-              "instancecount": 2,
-              "http://www.w3.org/2002/07/owl#Class": 1
+              "instancecount": 3,
+              "http://www.w3.org/2002/07/owl#Class": 2
             },
             "http://www.w3.org/2000/01/rdf-schema#label": {
               "instancecount": 1
@@ -244,7 +244,7 @@ var tree={
           },
           "from": {}
         },
-        "instancecount": 3
+        "instancecount": 4
       },
       {
         "id": "http://fuzzy-sl.squirrel.link/ontology/Book",
