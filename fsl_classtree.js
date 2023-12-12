@@ -201,9 +201,8 @@ var tree={
           "from": {
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 0,
-              "http://www.w3.org/2002/07/owl#NamedIndividual": 17,
-              "http://fuzzy-sl.squirrel.link/ontology/SpatialType": 17,
-              "http://fuzzy-sl.squirrel.link/ontology/SiteType": 1
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 3,
+              "http://fuzzy-sl.squirrel.link/ontology/MethodType": 3
             },
             "http://www.w3.org/2000/01/rdf-schema#range": {
               "instancecount": 0,
