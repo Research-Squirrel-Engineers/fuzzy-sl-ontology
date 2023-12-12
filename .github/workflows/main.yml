@@ -19,7 +19,7 @@ jobs:
     uses: sparqlunicorn/sparqlunicornGoesGIS-ontdoc/.github/workflows/udoc.yml@main
     with:
       version: v016
-      rdffilepath: ontology/fsl-ontology.owl
+      rdffilepath: ontology/fsl-ontology.ttl
       docpath: docs
       prefixns: http://fuzzy-sl.squirrel.link/ontology/
       prefixnsshort: fsl
