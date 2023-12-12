@@ -1,1 +1,1 @@
-# fuzzy-sl-ontology
+# Fuzzy Spatial Locations Ontology
