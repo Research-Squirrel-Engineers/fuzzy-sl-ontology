@@ -1,0 +1,7 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://fuzzy-sl.squirrel.link/ontology/PaperDesc> a <http://fuzzy-sl.squirrel.link/ontology/Source>,
+        owl:NamedIndividual ;
+    rdfs:label "Description in Paper"@en .
+
