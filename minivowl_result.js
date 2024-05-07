@@ -11,6 +11,11 @@ var minivowlresult={
    "uri": "http://www.w3.org/2002/07/owl#Ontology"
   },
   {
+   "name": "AnnotationProperty",
+   "type": "class",
+   "uri": "http://www.w3.org/2002/07/owl#AnnotationProperty"
+  },
+  {
    "name": "ObjectProperty",
    "type": "class",
    "uri": "http://www.w3.org/2002/07/owl#ObjectProperty"

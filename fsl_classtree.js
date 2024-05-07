@@ -201,8 +201,9 @@ var tree={
           "from": {
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 0,
-              "http://www.w3.org/2002/07/owl#NamedIndividual": 3,
-              "http://fuzzy-sl.squirrel.link/ontology/MethodType": 3
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 2,
+              "http://fuzzy-sl.squirrel.link/ontology/SiteType": 2,
+              "http://fuzzy-sl.squirrel.link/ontology/SpatialType": 1
             },
             "http://www.w3.org/2000/01/rdf-schema#range": {
               "instancecount": 0,
@@ -234,8 +235,8 @@ var tree={
         "data": {
           "to": {
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
-              "instancecount": 3,
-              "http://www.w3.org/2002/07/owl#Class": 2
+              "instancecount": 2,
+              "http://www.w3.org/2002/07/owl#Class": 1
             },
             "http://www.w3.org/2000/01/rdf-schema#label": {
               "instancecount": 1
@@ -243,7 +244,7 @@ var tree={
           },
           "from": {}
         },
-        "instancecount": 4
+        "instancecount": 3
       },
       {
         "id": "http://fuzzy-sl.squirrel.link/ontology/Book",
@@ -558,9 +559,9 @@ var tree={
       },
       {
         "id": "http://fuzzy-sl.squirrel.link/ontology/nonns_SpatialObject.html",
-        "parent": "http://www.w3.org/2004/02/skos/core#Concept",
+        "parent": "http://www.cidoc-crm.org/cidoc-crm/E53_Place",
         "type": "class",
-        "text": "Spatial Object (gsp:SpatialObject)",
+        "text": "Spatial Object (geo:SpatialObject)",
         "data": {
           "to": {
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
@@ -596,45 +597,73 @@ var tree={
         "data": {}
       },
       {
+        "id": "http://schema.org/Place",
+        "parent": "http://www.w3.org/2004/02/skos/core#Concept",
+        "type": "class",
+        "text": "Place",
+        "data": {}
+      },
+      {
+        "id": "http://www.w3.org/2004/02/skos/core#Concept",
+        "parent": "http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity",
+        "type": "class",
+        "text": "Concept (skos:Concept)",
+        "data": {}
+      },
+      {
+        "id": "http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity",
+        "parent": "http://www.w3.org/ns/prov#Entity",
+        "type": "class",
+        "text": "E1_CRM_Entity",
+        "data": {}
+      },
+      {
+        "id": "http://www.w3.org/ns/prov#Entity",
+        "parent": "#",
+        "type": "class",
+        "text": "Entity (prov:Entity)",
+        "data": {}
+      },
+      {
+        "id": "http://www.cidoc-crm.org/cidoc-crm/E53_Place",
+        "parent": "http://schema.org/Place",
+        "type": "class",
+        "text": "E53_Place",
+        "data": {}
+      },
+      {
         "id": "http://www.opengis.net/ont/geosparql#Feature",
         "parent": "http://www.opengis.net/ont/geosparql#SpatialObject",
         "type": "class",
-        "text": "Feature (gsp:Feature)",
+        "text": "Feature (geo:Feature)",
         "data": {}
       },
       {
         "id": "http://www.opengis.net/ont/geosparql#Geometry",
         "parent": "http://www.opengis.net/ont/geosparql#SpatialObject",
         "type": "class",
-        "text": "Geometry (gsp:Geometry)",
-        "data": {}
-      },
-      {
-        "id": "http://www.w3.org/2004/02/skos/core#Concept",
-        "parent": "#",
-        "type": "class",
-        "text": "Concept (skos:Concept)",
+        "text": "Geometry (geo:Geometry)",
         "data": {}
       },
       {
         "id": "http://www.opengis.net/ont/sf#MultiLineString",
         "parent": "http://www.opengis.net/ont/geosparql#SpatialObject",
         "type": "class",
-        "text": "MultiLineString (sf:MultiLineString)",
+        "text": "MultiLineString",
         "data": {}
       },
       {
         "id": "http://www.opengis.net/ont/sf#MultiPoint",
         "parent": "http://www.opengis.net/ont/geosparql#SpatialObject",
         "type": "class",
-        "text": "MultiPoint (sf:MultiPoint)",
+        "text": "MultiPoint",
         "data": {}
       },
       {
         "id": "http://www.opengis.net/ont/sf#MultiPolygon",
         "parent": "http://www.opengis.net/ont/geosparql#SpatialObject",
         "type": "class",
-        "text": "MultiPolygon (sf:MultiPolygon)",
+        "text": "MultiPolygon",
         "data": {}
       },
       {
