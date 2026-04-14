@@ -3,9 +3,13 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ns1:hasReference a owl:DatatypeProperty ;
+ns1:hasReference a owl:DatatypeProperty,
+        owl:ObjectProperty ;
     rdfs:label "has reference"@en ;
     ns1:EM true ;
     ns1:GLM true ;
-    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P11> .
+    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P11>,
+        <https://fuzzy-sl.wikibase.cloud/entity/P17>,
+        <https://fuzzy-sl.wikibase.cloud/entity/P25>,
+        <https://fuzzy-sl.wikibase.cloud/entity/P31> .
 

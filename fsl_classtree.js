@@ -201,12 +201,8 @@ var tree={
           "from": {
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 0,
-              "http://www.w3.org/2002/07/owl#NamedIndividual": 3,
-              "http://fuzzy-sl.squirrel.link/ontology/MethodType": 3
-            },
-            "http://www.w3.org/2000/01/rdf-schema#range": {
-              "instancecount": 0,
-              "http://www.w3.org/2002/07/owl#ObjectProperty": 1
+              "http://www.w3.org/2002/07/owl#NamedIndividual": 5,
+              "http://fuzzy-sl.squirrel.link/ontology/SourceType": 5
             }
           }
         },
@@ -290,14 +286,11 @@ var tree={
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 2,
               "http://www.w3.org/2002/07/owl#Class": 1
-            },
-            "http://www.w3.org/2000/01/rdf-schema#label": {
-              "instancecount": 1
             }
           },
           "from": {}
         },
-        "instancecount": 3
+        "instancecount": 2
       },
       {
         "id": "http://fuzzy-sl.squirrel.link/ontology/CampanianIgnimbriteProject",
@@ -553,6 +546,13 @@ var tree={
         "instancecount": 3
       },
       {
+        "id": "http://fuzzy-sl.squirrel.link/ontology/LocationType",
+        "parent": "http://fuzzy-sl.squirrel.link/ontology/Type",
+        "type": "class",
+        "text": "LocationType (fsl:LocationType)",
+        "data": {}
+      },
+      {
         "id": "http://fuzzy-sl.squirrel.link/ontology/Place",
         "parent": "http://www.opengis.net/ont/geosparql#SpatialObject",
         "type": "class",
@@ -590,6 +590,13 @@ var tree={
           }
         },
         "instancecount": 3
+      },
+      {
+        "id": "http://fuzzy-sl.squirrel.link/ontology/PointType",
+        "parent": "http://fuzzy-sl.squirrel.link/ontology/Type",
+        "type": "class",
+        "text": "PointType (fsl:PointType)",
+        "data": {}
       },
       {
         "id": "http://fuzzy-sl.squirrel.link/ontology/Site",

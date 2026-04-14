@@ -1,0 +1,8 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://fuzzy-sl.squirrel.link/ontology/hasLocationType> a owl:ObjectProperty ;
+    rdfs:label "has location type"@en ;
+    rdfs:range <http://fuzzy-sl.squirrel.link/ontology/LocationType> ;
+    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P24> .
+

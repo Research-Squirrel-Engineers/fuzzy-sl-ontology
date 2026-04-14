@@ -4,5 +4,6 @@
 <http://fuzzy-sl.squirrel.link/ontology/certaintyLevel> a owl:ObjectProperty ;
     rdfs:label "certainty level"@en ;
     rdfs:domain <http://fuzzy-sl.squirrel.link/ontology/Place> ;
-    rdfs:range <http://fuzzy-sl.squirrel.link/ontology/CertaintyType> .
+    rdfs:range <http://fuzzy-sl.squirrel.link/ontology/CertaintyType> ;
+    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P5> .
 

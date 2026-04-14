@@ -3,5 +3,6 @@
 
 <http://fuzzy-sl.squirrel.link/ontology/certaintyDesc> a owl:DatatypeProperty ;
     rdfs:label "certainty description"@en ;
-    rdfs:subPropertyOf owl:topDataProperty .
+    rdfs:subPropertyOf owl:topDataProperty ;
+    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P13> .
 

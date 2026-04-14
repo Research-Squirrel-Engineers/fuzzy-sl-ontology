@@ -5,5 +5,6 @@
 <http://fuzzy-sl.squirrel.link/ontology/activityDesc> a owl:DatatypeProperty ;
     rdfs:label "activity method description"@en ;
     rdfs:domain <http://fuzzy-sl.squirrel.link/ontology/Place> ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:string ;
+    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P15> .
 

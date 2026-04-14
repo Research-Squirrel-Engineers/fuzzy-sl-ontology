@@ -3,6 +3,7 @@
 @prefix ns1: <http://fuzzy-sl.squirrel.link/ontology/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -178,16 +179,19 @@ ns1:WikimediaCommons a ns1:Source,
 ns1:activityDesc a owl:DatatypeProperty ;
     rdfs:label "activity method description"@en ;
     rdfs:domain ns1:Place ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:string ;
+    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P15> .
 
 ns1:certaintyDesc a owl:DatatypeProperty ;
     rdfs:label "certainty description"@en ;
-    rdfs:subPropertyOf owl:topDataProperty .
+    rdfs:subPropertyOf owl:topDataProperty ;
+    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P13> .
 
 ns1:certaintyLevel a owl:ObjectProperty ;
     rdfs:label "certainty level"@en ;
     rdfs:domain ns1:Place ;
-    rdfs:range ns1:CertaintyType .
+    rdfs:range ns1:CertaintyType ;
+    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P5> .
 
 ns1:dubiousMatch a owl:ObjectProperty ;
     rdfs:label "has a dubious match"@en ;
@@ -199,15 +203,30 @@ ns1:georeferencingBy a owl:ObjectProperty ;
     rdfs:domain ns1:Place ;
     rdfs:range foaf:Person .
 
-ns1:hasReference a owl:DatatypeProperty ;
+ns1:hasLocationType a owl:ObjectProperty ;
+    rdfs:label "has location type"@en ;
+    rdfs:range ns1:LocationType ;
+    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P24> .
+
+ns1:hasPointType a owl:ObjectProperty ;
+    rdfs:label "has point type"@en ;
+    rdfs:range ns1:PointType ;
+    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P33> .
+
+ns1:hasReference a owl:DatatypeProperty,
+        owl:ObjectProperty ;
     rdfs:label "has reference"@en ;
     ns1:EM true ;
     ns1:GLM true ;
-    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P11> .
+    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P11>,
+        <https://fuzzy-sl.wikibase.cloud/entity/P17>,
+        <https://fuzzy-sl.wikibase.cloud/entity/P25>,
+        <https://fuzzy-sl.wikibase.cloud/entity/P31> .
 
-ns1:hasSourceType a owl:ObjectProperty ;
-    rdfs:label "has source type"@en ;
-    rdfs:subPropertyOf ns1:hasSource .
+ns1:hasSourceTypeDetail a owl:ObjectProperty ;
+    rdfs:label "has source type (detail)"@en ;
+    rdfs:subPropertyOf ns1:hasSourceType ;
+    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P16> .
 
 ns1:high a ns1:CertaintyType,
         owl:NamedIndividual ;
@@ -239,6 +258,10 @@ ns1:method a owl:ObjectProperty ;
     rdfs:domain ns1:Place ;
     rdfs:range ns1:MethodType .
 
+ns1:methodUsed a owl:ObjectProperty ;
+    rdfs:subPropertyOf rdf:type ;
+    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P7> .
+
 ns1:partOf a owl:ObjectProperty ;
     rdfs:label "part of"@en ;
     ns1:EM true ;
@@ -251,6 +274,9 @@ ns1:partlyMatch a owl:ObjectProperty ;
     rdfs:label "has partly match"@en ;
     rdfs:subPropertyOf skos:relatedMatch ;
     skos:definition "is used to state an associative mapping link between two places, in which one is part of another"@en .
+
+ns1:precision a owl:DatatypeProperty ;
+    rdfs:label "precision"@en .
 
 ns1:relatedTo a owl:ObjectProperty ;
     rdfs:label "related to"@en ;
@@ -291,10 +317,23 @@ ns1:Location a owl:Class ;
     rdfs:label "Location"@en ;
     rdfs:subClassOf prov:Location .
 
+ns1:LocationType a owl:Class ;
+    rdfs:label "Location Type"@en ;
+    rdfs:subClassOf ns1:Type .
+
+ns1:PointType a owl:Class ;
+    rdfs:label "Point Type"@en ;
+    rdfs:subClassOf ns1:Type .
+
 ns1:hasSource a owl:ObjectProperty ;
     rdfs:label "has source"@en ;
     rdfs:domain ns1:Place ;
     rdfs:range ns1:Source .
+
+ns1:hasSourceType a owl:ObjectProperty ;
+    rdfs:label "has source type (generic)"@en ;
+    rdfs:subPropertyOf ns1:hasSource ;
+    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P6> .
 
 ns1:Project a owl:Class ;
     rdfs:label "Project"@en ;
@@ -316,11 +355,11 @@ ns1:SourceType a owl:Class ;
     rdfs:label "Source Type"@en ;
     rdfs:subClassOf ns1:Type .
 
-ns1:Type a owl:Class ;
-    rdfs:label "Type"@en .
-
 ns1:Source a owl:Class ;
     rdfs:label "Source"@en .
+
+ns1:Type a owl:Class ;
+    rdfs:label "Type"@en .
 
 ns1:Place a owl:Class ;
     rdfs:label "Place"@en ;
