@@ -69,6 +69,7 @@ fsl:GeoM rdf:type owl:AnnotationProperty ;
 
 ###  http://fuzzy-sl.squirrel.link/ontology/certaintyLevel
 fsl:certaintyLevel rdf:type owl:ObjectProperty ;
+                   owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P5> ;
                    rdfs:domain fsl:Place ;
                    rdfs:range fsl:CertaintyType ;
                    rdfs:label "certainty level"@en .
@@ -88,6 +89,26 @@ fsl:georeferencingBy rdf:type owl:ObjectProperty ;
                      rdfs:label "georeferencing done by"@en .
 
 
+###  http://fuzzy-sl.squirrel.link/ontology/hasLocationType
+fsl:hasLocationType rdf:type owl:ObjectProperty ;
+                    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P24> ;
+                    rdfs:range fsl:LocationType ;
+                    rdfs:label "has location type"@en .
+
+
+###  http://fuzzy-sl.squirrel.link/ontology/hasPointType
+fsl:hasPointType rdf:type owl:ObjectProperty ;
+                 owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P33> ;
+                 rdfs:range fsl:PointType ;
+                 rdfs:label "has point type"@en .
+
+
+###  http://fuzzy-sl.squirrel.link/ontology/hasReference
+fsl:hasReference rdf:type owl:ObjectProperty ;
+                 owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P17> ,
+                                        <https://fuzzy-sl.wikibase.cloud/entity/P31> .
+
+
 ###  http://fuzzy-sl.squirrel.link/ontology/hasSource
 fsl:hasSource rdf:type owl:ObjectProperty ;
               rdfs:domain fsl:Place ;
@@ -97,8 +118,16 @@ fsl:hasSource rdf:type owl:ObjectProperty ;
 
 ###  http://fuzzy-sl.squirrel.link/ontology/hasSourceType
 fsl:hasSourceType rdf:type owl:ObjectProperty ;
+                  owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P6> ;
                   rdfs:subPropertyOf fsl:hasSource ;
-                  rdfs:label "has source type"@en .
+                  rdfs:label "has source type (generic)"@en .
+
+
+###  http://fuzzy-sl.squirrel.link/ontology/hasSourceTypeDetail
+fsl:hasSourceTypeDetail rdf:type owl:ObjectProperty ;
+                        owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P16> ;
+                        rdfs:subPropertyOf fsl:hasSourceType ;
+                        rdfs:label "has source type (detail)"@en .
 
 
 ###  http://fuzzy-sl.squirrel.link/ontology/image
@@ -119,6 +148,12 @@ fsl:method rdf:type owl:ObjectProperty ;
            rdfs:domain fsl:Place ;
            rdfs:range fsl:MethodType ;
            rdfs:label "georeferencing method"@en .
+
+
+###  http://fuzzy-sl.squirrel.link/ontology/methodUsed
+fsl:methodUsed rdf:type owl:ObjectProperty ;
+               owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P7> ;
+               rdfs:subPropertyOf rdf:type .
 
 
 ###  http://fuzzy-sl.squirrel.link/ontology/partOf
@@ -184,14 +219,17 @@ fsl:spatialType rdf:type owl:ObjectProperty ;
                                                    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P4> .
 
 
-###  http://www.w3.org/2004/02/skos/core#mappingRelation
-<http://www.w3.org/2004/02/skos/core#mappingRelation> owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P10> ;
-                                                      fsl:EM "true"^^xsd:boolean ;
-                                                      fsl:GLM "true"^^xsd:boolean .
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+rdf:type rdf:type owl:ObjectProperty ;
+         rdfs:label "a"@en .
 
 
 ###  http://www.w3.org/2004/02/skos/core#relatedMatch
 <http://www.w3.org/2004/02/skos/core#relatedMatch> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#wasAssociatedWith
+<http://www.w3.org/ns/prov#wasAssociatedWith> owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P14> .
 
 
 ###  http://www.wikidata.org/entity/P131
@@ -226,11 +264,36 @@ fsl:spatialType rdf:type owl:ObjectProperty ;
                                              rdfs:label "P10 related to"@en .
 
 
+###  https://fuzzy-sl.wikibase.cloud/entity/P14
+<https://fuzzy-sl.wikibase.cloud/entity/P14> rdf:type owl:ObjectProperty ;
+                                             rdfs:label "P14 acting person"@en .
+
+
+###  https://fuzzy-sl.wikibase.cloud/entity/P16
+<https://fuzzy-sl.wikibase.cloud/entity/P16> rdf:type owl:ObjectProperty ;
+                                             rdfs:label "P16 source type (detail)"@en .
+
+
+###  https://fuzzy-sl.wikibase.cloud/entity/P17
+<https://fuzzy-sl.wikibase.cloud/entity/P17> rdf:type owl:ObjectProperty ;
+                                             rdfs:label "P17 reference URL"@en .
+
+
+###  https://fuzzy-sl.wikibase.cloud/entity/P24
+<https://fuzzy-sl.wikibase.cloud/entity/P24> rdf:type owl:ObjectProperty ;
+                                             rdfs:label "P24 location type"@en .
+
+
 ###  https://fuzzy-sl.wikibase.cloud/entity/P3
 <https://fuzzy-sl.wikibase.cloud/entity/P3> rdf:type owl:ObjectProperty ;
                                             fsl:EM "true"^^xsd:boolean ;
                                             fsl:GLM "true"^^xsd:boolean ;
                                             rdfs:label "P3 part of"@en .
+
+
+###  https://fuzzy-sl.wikibase.cloud/entity/P31
+<https://fuzzy-sl.wikibase.cloud/entity/P31> rdf:type owl:ObjectProperty ;
+                                             rdfs:label "P31 reference (Item)"@en .
 
 
 ###  https://fuzzy-sl.wikibase.cloud/entity/P32
@@ -241,9 +304,30 @@ fsl:spatialType rdf:type owl:ObjectProperty ;
                                              rdfs:label "P32 located in the administrative territorial entity"@en .
 
 
+###  https://fuzzy-sl.wikibase.cloud/entity/P33
+<https://fuzzy-sl.wikibase.cloud/entity/P33> rdf:type owl:ObjectProperty ;
+                                             rdfs:label "P33 point type"@en .
+
+
 ###  https://fuzzy-sl.wikibase.cloud/entity/P4
 <https://fuzzy-sl.wikibase.cloud/entity/P4> rdf:type owl:ObjectProperty ;
                                             rdfs:label "P4 has coordinate"@en .
+
+
+###  https://fuzzy-sl.wikibase.cloud/entity/P5
+<https://fuzzy-sl.wikibase.cloud/entity/P5> rdf:type owl:ObjectProperty ;
+                                            rdfs:label "P5 has certainty level"@en .
+
+
+###  https://fuzzy-sl.wikibase.cloud/entity/P6
+<https://fuzzy-sl.wikibase.cloud/entity/P6> rdf:type owl:ObjectProperty ;
+                                            rdfs:label "P6 source type (generic)"@en .
+
+
+###  https://fuzzy-sl.wikibase.cloud/entity/P7
+<https://fuzzy-sl.wikibase.cloud/entity/P7> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf rdf:type ;
+                                            rdfs:label "P7 method used"@en .
 
 
 ###  https://fuzzy-sl.wikibase.cloud/entity/P8
@@ -259,6 +343,7 @@ fsl:spatialType rdf:type owl:ObjectProperty ;
 
 ###  http://fuzzy-sl.squirrel.link/ontology/activityDesc
 fsl:activityDesc rdf:type owl:DatatypeProperty ;
+                 owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P15> ;
                  rdfs:domain fsl:Place ;
                  rdfs:range xsd:string ;
                  rdfs:label "activity method description"@en .
@@ -266,22 +351,46 @@ fsl:activityDesc rdf:type owl:DatatypeProperty ;
 
 ###  http://fuzzy-sl.squirrel.link/ontology/certaintyDesc
 fsl:certaintyDesc rdf:type owl:DatatypeProperty ;
+                  owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P13> ;
                   rdfs:subPropertyOf owl:topDataProperty ;
                   rdfs:label "certainty description"@en .
 
 
 ###  http://fuzzy-sl.squirrel.link/ontology/hasReference
 fsl:hasReference rdf:type owl:DatatypeProperty ;
-                 owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P11> ;
-                 fsl:EM "true"^^xsd:boolean ;
-                 fsl:GLM "true"^^xsd:boolean ;
-                 rdfs:label "has reference"@en .
+                 owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P11> ,
+                                        <https://fuzzy-sl.wikibase.cloud/entity/P25> .
+
+
+###  http://fuzzy-sl.squirrel.link/ontology/precision
+fsl:precision rdf:type owl:DatatypeProperty ;
+              rdfs:label "precision"@en .
 
 
 ###  https://fuzzy-sl.wikibase.cloud/entity/P11
 <https://fuzzy-sl.wikibase.cloud/entity/P11> rdf:type owl:DatatypeProperty ;
                                              fsl:GLM "true"^^xsd:boolean ;
                                              rdfs:label "P11 has reference"@en .
+
+
+###  https://fuzzy-sl.wikibase.cloud/entity/P13
+<https://fuzzy-sl.wikibase.cloud/entity/P13> rdf:type owl:DatatypeProperty ;
+                                             rdfs:label "P13 certainty description"@en .
+
+
+###  https://fuzzy-sl.wikibase.cloud/entity/P15
+<https://fuzzy-sl.wikibase.cloud/entity/P15> rdf:type owl:DatatypeProperty ;
+                                             rdfs:label "P15 method description"@en .
+
+
+###  https://fuzzy-sl.wikibase.cloud/entity/P23
+<https://fuzzy-sl.wikibase.cloud/entity/P23> rdf:type owl:DatatypeProperty ;
+                                             rdfs:label "P23 precision"@en .
+
+
+###  https://fuzzy-sl.wikibase.cloud/entity/P25
+<https://fuzzy-sl.wikibase.cloud/entity/P25> rdf:type owl:DatatypeProperty ;
+                                             rdfs:label "P25 reference (String)"@en .
 
 
 #################################################################
@@ -300,6 +409,12 @@ fsl:Location rdf:type owl:Class ;
              rdfs:label "Location"@en .
 
 
+###  http://fuzzy-sl.squirrel.link/ontology/LocationType
+fsl:LocationType rdf:type owl:Class ;
+                 rdfs:subClassOf fsl:Type ;
+                 rdfs:label "Location Type"@en .
+
+
 ###  http://fuzzy-sl.squirrel.link/ontology/MethodType
 fsl:MethodType rdf:type owl:Class ;
                rdfs:subClassOf fsl:Type ;
@@ -310,6 +425,12 @@ fsl:MethodType rdf:type owl:Class ;
 fsl:Place rdf:type owl:Class ;
           rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ;
           rdfs:label "Place"@en .
+
+
+###  http://fuzzy-sl.squirrel.link/ontology/PointType
+fsl:PointType rdf:type owl:Class ;
+              rdfs:subClassOf fsl:Type ;
+              rdfs:label "Point Type"@en .
 
 
 ###  http://fuzzy-sl.squirrel.link/ontology/Project
@@ -672,6 +793,19 @@ fsl:medium rdf:type owl:NamedIndividual ,
 fsl:uncertain rdf:type owl:NamedIndividual ,
                        fsl:CertaintyType ;
               rdfs:label "uncertain"@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+fsl:hasReference fsl:GLM "true"^^xsd:boolean ;
+                 rdfs:label "has reference"@en ;
+                 fsl:EM "true"^^xsd:boolean .
+
+
+<http://www.w3.org/2004/02/skos/core#mappingRelation> fsl:EM "true"^^xsd:boolean ;
+                                                      fsl:GLM "true"^^xsd:boolean .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
