@@ -10,11 +10,54 @@
 <http://fuzzy-sl.squirrel.link/ontology/> rdf:type owl:Ontology ;
                                            owl:imports <http://www.opengis.net/ont/geosparql> ,
                                                        <http://www.w3.org/ns/prov-o-20130430> ;
-                                           rdfs:label "Fuzzy Spatial Locations Ontology"@en .
+                                           rdfs:label "Fuzzy Spatial Locations Ontology"@en ;
+                                           owl:versionInfo "2026-04-14" .
 
 #################################################################
 #    Annotation properties
 #################################################################
+
+###  http://fuzzy-sl.squirrel.link/ontology/AcM
+fsl:AcM rdf:type owl:AnnotationProperty ;
+        rdfs:label "Activity Metadata"@en ;
+        rdfs:range xsd:boolean ;
+        rdfs:domain owl:Thing .
+
+
+###  http://fuzzy-sl.squirrel.link/ontology/AgM
+fsl:AgM rdf:type owl:AnnotationProperty ;
+        rdfs:label "Agent Metadata"@en ;
+        rdfs:range xsd:boolean ;
+        rdfs:domain owl:Thing .
+
+
+###  http://fuzzy-sl.squirrel.link/ontology/CM
+fsl:CM rdf:type owl:AnnotationProperty ;
+       rdfs:label "Coordinate Metadata (CM)"@en ;
+       rdfs:range xsd:boolean ;
+       rdfs:domain owl:Thing .
+
+
+###  http://fuzzy-sl.squirrel.link/ontology/EM
+fsl:EM rdf:type owl:AnnotationProperty ;
+       rdfs:label "Entity Metadata"@en ;
+       rdfs:range xsd:boolean ;
+       rdfs:domain owl:Thing .
+
+
+###  http://fuzzy-sl.squirrel.link/ontology/GLM
+fsl:GLM rdf:type owl:AnnotationProperty ;
+        rdfs:label "Geolocation Metadata (GLM)"@en ;
+        rdfs:range xsd:boolean ;
+        rdfs:domain owl:Thing .
+
+
+###  http://fuzzy-sl.squirrel.link/ontology/GeoM
+fsl:GeoM rdf:type owl:AnnotationProperty ;
+         rdfs:label "Geometry Metadata"@en ;
+         rdfs:range xsd:boolean ;
+         rdfs:domain owl:Thing .
+
 
 ###  http://www.w3.org/2004/02/skos/core#definition
 <http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
@@ -63,6 +106,14 @@ fsl:image rdf:type owl:ObjectProperty ;
           rdfs:label "has image"@en .
 
 
+###  http://fuzzy-sl.squirrel.link/ontology/locatedInAdministrativeEntity
+fsl:locatedInAdministrativeEntity rdf:type owl:ObjectProperty ;
+                                  owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P32> ;
+                                  fsl:EM "true"^^xsd:boolean ;
+                                  fsl:GLM "true"^^xsd:boolean ;
+                                  rdfs:label "located in the administrative territorial entity"@en .
+
+
 ###  http://fuzzy-sl.squirrel.link/ontology/method
 fsl:method rdf:type owl:ObjectProperty ;
            rdfs:domain fsl:Place ;
@@ -72,8 +123,11 @@ fsl:method rdf:type owl:ObjectProperty ;
 
 ###  http://fuzzy-sl.squirrel.link/ontology/partOf
 fsl:partOf rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P3> ;
            rdfs:domain fsl:Place ;
            rdfs:range fsl:Project ;
+           fsl:EM "true"^^xsd:boolean ;
+           fsl:GLM "true"^^xsd:boolean ;
            rdfs:label "part of"@en .
 
 
@@ -100,8 +154,11 @@ fsl:representativeGeometry rdf:type owl:ObjectProperty ;
 
 ###  http://fuzzy-sl.squirrel.link/ontology/siteType
 fsl:siteType rdf:type owl:ObjectProperty ;
+             owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P1> ;
              rdfs:domain fsl:Place ;
              rdfs:range fsl:SiteType ;
+             fsl:EM "true"^^xsd:boolean ;
+             fsl:GLM "true"^^xsd:boolean ;
              rdfs:label "has site type"@en .
 
 
@@ -114,17 +171,86 @@ fsl:spatialCloseMatch rdf:type owl:ObjectProperty ;
 
 ###  http://fuzzy-sl.squirrel.link/ontology/spatialType
 fsl:spatialType rdf:type owl:ObjectProperty ;
+                owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P8> ;
                 rdfs:domain fsl:Place ;
                 rdfs:range fsl:SpatialType ;
+                fsl:EM "true"^^xsd:boolean ;
+                fsl:GLM "true"^^xsd:boolean ;
                 rdfs:label "has spatial type"@en .
 
 
 ###  http://www.opengis.net/ont/geosparql#hasGeometry
-<http://www.opengis.net/ont/geosparql#hasGeometry> rdf:type owl:ObjectProperty .
+<http://www.opengis.net/ont/geosparql#hasGeometry> rdf:type owl:ObjectProperty ;
+                                                   owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P4> .
+
+
+###  http://www.w3.org/2004/02/skos/core#mappingRelation
+<http://www.w3.org/2004/02/skos/core#mappingRelation> owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P10> ;
+                                                      fsl:EM "true"^^xsd:boolean ;
+                                                      fsl:GLM "true"^^xsd:boolean .
 
 
 ###  http://www.w3.org/2004/02/skos/core#relatedMatch
 <http://www.w3.org/2004/02/skos/core#relatedMatch> rdf:type owl:ObjectProperty .
+
+
+###  http://www.wikidata.org/entity/P131
+<http://www.wikidata.org/entity/P131> rdf:type owl:ObjectProperty ;
+                                      rdfs:label "Wikidata P131 located in the administrative territorial entity"@en .
+
+
+###  http://www.wikidata.org/entity/P361
+<http://www.wikidata.org/entity/P361> rdf:type owl:ObjectProperty ;
+                                      owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P3> ;
+                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                      rdfs:label "Wikidata P361 part of"@en .
+
+
+###  http://www.wikidata.org/entity/P625
+<http://www.wikidata.org/entity/P625> rdf:type owl:ObjectProperty ;
+                                      owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P4> ;
+                                      rdfs:label "Wikidata P625 coordinate location"@en .
+
+
+###  https://fuzzy-sl.wikibase.cloud/entity/P1
+<https://fuzzy-sl.wikibase.cloud/entity/P1> rdf:type owl:ObjectProperty ;
+                                            fsl:EM "true"^^xsd:boolean ;
+                                            fsl:GLM "true"^^xsd:boolean ;
+                                            rdfs:label "P1 instance of (site type)"@en .
+
+
+###  https://fuzzy-sl.wikibase.cloud/entity/P10
+<https://fuzzy-sl.wikibase.cloud/entity/P10> rdf:type owl:ObjectProperty ;
+                                             fsl:EM "true"^^xsd:boolean ;
+                                             fsl:GLM "true"^^xsd:boolean ;
+                                             rdfs:label "P10 related to"@en .
+
+
+###  https://fuzzy-sl.wikibase.cloud/entity/P3
+<https://fuzzy-sl.wikibase.cloud/entity/P3> rdf:type owl:ObjectProperty ;
+                                            fsl:EM "true"^^xsd:boolean ;
+                                            fsl:GLM "true"^^xsd:boolean ;
+                                            rdfs:label "P3 part of"@en .
+
+
+###  https://fuzzy-sl.wikibase.cloud/entity/P32
+<https://fuzzy-sl.wikibase.cloud/entity/P32> rdf:type owl:ObjectProperty ;
+                                             owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P8> ;
+                                             fsl:EM "true"^^xsd:boolean ;
+                                             fsl:GLM "true"^^xsd:boolean ;
+                                             rdfs:label "P32 located in the administrative territorial entity"@en .
+
+
+###  https://fuzzy-sl.wikibase.cloud/entity/P4
+<https://fuzzy-sl.wikibase.cloud/entity/P4> rdf:type owl:ObjectProperty ;
+                                            rdfs:label "P4 has coordinate"@en .
+
+
+###  https://fuzzy-sl.wikibase.cloud/entity/P8
+<https://fuzzy-sl.wikibase.cloud/entity/P8> rdf:type owl:ObjectProperty ;
+                                            fsl:EM "true"^^xsd:boolean ;
+                                            fsl:GLM "true"^^xsd:boolean ;
+                                            rdfs:label "P8 has spatial type"@en .
 
 
 #################################################################
@@ -146,7 +272,16 @@ fsl:certaintyDesc rdf:type owl:DatatypeProperty ;
 
 ###  http://fuzzy-sl.squirrel.link/ontology/hasReference
 fsl:hasReference rdf:type owl:DatatypeProperty ;
+                 owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P11> ;
+                 fsl:EM "true"^^xsd:boolean ;
+                 fsl:GLM "true"^^xsd:boolean ;
                  rdfs:label "has reference"@en .
+
+
+###  https://fuzzy-sl.wikibase.cloud/entity/P11
+<https://fuzzy-sl.wikibase.cloud/entity/P11> rdf:type owl:DatatypeProperty ;
+                                             fsl:GLM "true"^^xsd:boolean ;
+                                             rdfs:label "P11 has reference"@en .
 
 
 #################################################################
