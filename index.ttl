@@ -1,282 +1,332 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix ns1: <http://fuzzy-sl.squirrel.link/ontology/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://fuzzy-sl.squirrel.link/ontology/> a owl:Ontology ;
+ns1: a owl:Ontology ;
     rdfs:label "Fuzzy Spatial Locations Ontology"@en ;
     owl:imports <http://www.opengis.net/ont/geosparql>,
-        <http://www.w3.org/ns/prov-o-20130430> .
+        <http://www.w3.org/ns/prov-o-20130430> ;
+    owl:versionInfo "2026-04-14" .
 
-<http://fuzzy-sl.squirrel.link/ontology/AncientLocation> a <http://fuzzy-sl.squirrel.link/ontology/SpatialType>,
+ns1:AcM a owl:AnnotationProperty ;
+    rdfs:label "Activity Metadata"@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:boolean .
+
+ns1:AgM a owl:AnnotationProperty ;
+    rdfs:label "Agent Metadata"@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:boolean .
+
+ns1:AncientLocation a ns1:SpatialType,
         owl:NamedIndividual ;
     rdfs:label "Ancient Location"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/AncientRegion> a <http://fuzzy-sl.squirrel.link/ontology/SpatialType>,
+ns1:AncientRegion a ns1:SpatialType,
         owl:NamedIndividual ;
     rdfs:label "Ancient Region"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/ArchaeologicalSite> a <http://fuzzy-sl.squirrel.link/ontology/SiteType>,
-        <http://fuzzy-sl.squirrel.link/ontology/SpatialType>,
+ns1:ArchaeologicalSite a ns1:SiteType,
+        ns1:SpatialType,
         owl:NamedIndividual ;
     rdfs:label "Archaeological Site"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/Bight> a <http://fuzzy-sl.squirrel.link/ontology/SpatialType>,
+ns1:Bight a ns1:SpatialType,
         owl:NamedIndividual ;
     rdfs:label "Bight"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/Book> a <http://fuzzy-sl.squirrel.link/ontology/SourceType>,
+ns1:Book a ns1:SourceType,
         owl:NamedIndividual ;
     rdfs:label "Book"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/CampanianIgnimbriteProject> a <http://fuzzy-sl.squirrel.link/ontology/Project>,
+ns1:CM a owl:AnnotationProperty ;
+    rdfs:label "Coordinate Metadata (CM)"@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:boolean .
+
+ns1:CampanianIgnimbriteProject a ns1:Project,
         owl:NamedIndividual ;
     rdfs:label "Campanian Ignimbrite"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/Cave> a <http://fuzzy-sl.squirrel.link/ontology/SpatialType>,
+ns1:Cave a ns1:SpatialType,
         owl:NamedIndividual ;
     rdfs:label "Cave"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/Coinhoards> a <http://fuzzy-sl.squirrel.link/ontology/Source>,
+ns1:Coinhoards a ns1:Source,
         owl:NamedIndividual ;
     rdfs:label "Coinhoards"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/CrotonProject> a <http://fuzzy-sl.squirrel.link/ontology/Project>,
+ns1:CrotonProject a ns1:Project,
         owl:NamedIndividual ;
     rdfs:label "Silver Coinage of Croton"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/ExternalRepository> a <http://fuzzy-sl.squirrel.link/ontology/MethodType>,
+ns1:EM a owl:AnnotationProperty ;
+    rdfs:label "Entity Metadata"@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:boolean .
+
+ns1:ExternalRepository a ns1:MethodType,
         owl:NamedIndividual ;
     rdfs:label "External Repository"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/GeologicalSite> a <http://fuzzy-sl.squirrel.link/ontology/SiteType>,
+ns1:GLM a owl:AnnotationProperty ;
+    rdfs:label "Geolocation Metadata (GLM)"@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:boolean .
+
+ns1:GeoM a owl:AnnotationProperty ;
+    rdfs:label "Geometry Metadata"@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:boolean .
+
+ns1:GeologicalSite a ns1:SiteType,
         owl:NamedIndividual ;
     rdfs:label "Geological Site"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/Georeferencing> a <http://fuzzy-sl.squirrel.link/ontology/MethodType>,
+ns1:Georeferencing a ns1:MethodType,
         owl:NamedIndividual ;
     rdfs:label "Georeferencing"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/Image> a <http://fuzzy-sl.squirrel.link/ontology/SourceType>,
+ns1:Image a ns1:SourceType,
         owl:NamedIndividual ;
     rdfs:label "Image"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/InhabitedPlace> a <http://fuzzy-sl.squirrel.link/ontology/SpatialType>,
+ns1:InhabitedPlace a ns1:SpatialType,
         owl:NamedIndividual ;
     rdfs:label "inhabited Place"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/Island> a <http://fuzzy-sl.squirrel.link/ontology/SpatialType>,
+ns1:Island a ns1:SpatialType,
         owl:NamedIndividual ;
     rdfs:label "Island"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/Lake> a <http://fuzzy-sl.squirrel.link/ontology/SpatialType>,
+ns1:Lake a ns1:SpatialType,
         owl:NamedIndividual ;
     rdfs:label "Lake"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/ModernRegion> a <http://fuzzy-sl.squirrel.link/ontology/SpatialType>,
+ns1:ModernRegion a ns1:SpatialType,
         owl:NamedIndividual ;
     rdfs:label "Modern Region"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/Mountain> a <http://fuzzy-sl.squirrel.link/ontology/SpatialType>,
+ns1:Mountain a ns1:SpatialType,
         owl:NamedIndividual ;
     rdfs:label "Mountain"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/OSM> a <http://fuzzy-sl.squirrel.link/ontology/MethodType>,
+ns1:OSM a ns1:MethodType,
         owl:NamedIndividual ;
     rdfs:label "OSM"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/Paper> a <http://fuzzy-sl.squirrel.link/ontology/SourceType>,
+ns1:Paper a ns1:SourceType,
         owl:NamedIndividual ;
     rdfs:label "Scientific Paper"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/PaperDesc> a <http://fuzzy-sl.squirrel.link/ontology/Source>,
+ns1:PaperDesc a ns1:Source,
         owl:NamedIndividual ;
     rdfs:label "Description in Paper"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/Plateau> a <http://fuzzy-sl.squirrel.link/ontology/SpatialType>,
+ns1:Plateau a ns1:SpatialType,
         owl:NamedIndividual ;
     rdfs:label "Plateau"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/Pleiades> a <http://fuzzy-sl.squirrel.link/ontology/Source>,
+ns1:Pleiades a ns1:Source,
         owl:NamedIndividual ;
     rdfs:label "Pleiades"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/RegionCentre> a <http://fuzzy-sl.squirrel.link/ontology/SpatialType>,
+ns1:RegionCentre a ns1:SpatialType,
         owl:NamedIndividual ;
     rdfs:label "Region Centre"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/RepresentativePoint> a <http://fuzzy-sl.squirrel.link/ontology/SpatialType>,
+ns1:RepresentativePoint a ns1:SpatialType,
         owl:NamedIndividual ;
     rdfs:label "Representative Point"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/River> a <http://fuzzy-sl.squirrel.link/ontology/SpatialType>,
+ns1:River a ns1:SpatialType,
         owl:NamedIndividual ;
     rdfs:label "River"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/Sink> a <http://fuzzy-sl.squirrel.link/ontology/SpatialType>,
+ns1:Sink a ns1:SpatialType,
         owl:NamedIndividual ;
     rdfs:label "Sink"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/Site> a owl:Class ;
+ns1:Site a owl:Class ;
     rdfs:label "Site"@en ;
-    rdfs:subClassOf <http://fuzzy-sl.squirrel.link/ontology/Location> .
+    rdfs:subClassOf ns1:Location .
 
-<http://fuzzy-sl.squirrel.link/ontology/Supervolcano> a <http://fuzzy-sl.squirrel.link/ontology/SpatialType>,
+ns1:Supervolcano a ns1:SpatialType,
         owl:NamedIndividual ;
     rdfs:label "Supervolcano"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/URI> a <http://fuzzy-sl.squirrel.link/ontology/SourceType>,
+ns1:URI a ns1:SourceType,
         owl:NamedIndividual .
 
-<http://fuzzy-sl.squirrel.link/ontology/UnknownCategory> a <http://fuzzy-sl.squirrel.link/ontology/SpatialType>,
+ns1:UnknownCategory a ns1:SpatialType,
         owl:NamedIndividual ;
     rdfs:label "Unknown Category"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/Website> a <http://fuzzy-sl.squirrel.link/ontology/SourceType>,
+ns1:Website a ns1:SourceType,
         owl:NamedIndividual ;
     rdfs:label "Website"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/WikimediaCommons> a <http://fuzzy-sl.squirrel.link/ontology/Source>,
+ns1:WikimediaCommons a ns1:Source,
         owl:NamedIndividual ;
     rdfs:label "Wikimedia Commons"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/activityDesc> a owl:DatatypeProperty ;
+ns1:activityDesc a owl:DatatypeProperty ;
     rdfs:label "activity method description"@en ;
-    rdfs:domain <http://fuzzy-sl.squirrel.link/ontology/Place> ;
+    rdfs:domain ns1:Place ;
     rdfs:range xsd:string .
 
-<http://fuzzy-sl.squirrel.link/ontology/certaintyDesc> a owl:DatatypeProperty ;
+ns1:certaintyDesc a owl:DatatypeProperty ;
     rdfs:label "certainty description"@en ;
     rdfs:subPropertyOf owl:topDataProperty .
 
-<http://fuzzy-sl.squirrel.link/ontology/certaintyLevel> a owl:ObjectProperty ;
+ns1:certaintyLevel a owl:ObjectProperty ;
     rdfs:label "certainty level"@en ;
-    rdfs:domain <http://fuzzy-sl.squirrel.link/ontology/Place> ;
-    rdfs:range <http://fuzzy-sl.squirrel.link/ontology/CertaintyType> .
+    rdfs:domain ns1:Place ;
+    rdfs:range ns1:CertaintyType .
 
-<http://fuzzy-sl.squirrel.link/ontology/dubiousMatch> a owl:ObjectProperty ;
+ns1:dubiousMatch a owl:ObjectProperty ;
     rdfs:label "has a dubious match"@en ;
     rdfs:subPropertyOf skos:relatedMatch ;
     skos:definition "the match is dubious (e.g. ambiguity)"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/georeferencingBy> a owl:ObjectProperty ;
+ns1:georeferencingBy a owl:ObjectProperty ;
     rdfs:label "georeferencing done by"@en ;
-    rdfs:domain <http://fuzzy-sl.squirrel.link/ontology/Place> ;
+    rdfs:domain ns1:Place ;
     rdfs:range foaf:Person .
 
-<http://fuzzy-sl.squirrel.link/ontology/hasReference> a owl:DatatypeProperty ;
-    rdfs:label "has reference"@en .
+ns1:hasReference a owl:DatatypeProperty ;
+    rdfs:label "has reference"@en ;
+    ns1:EM true ;
+    ns1:GLM true ;
+    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P11> .
 
-<http://fuzzy-sl.squirrel.link/ontology/hasSourceType> a owl:ObjectProperty ;
+ns1:hasSourceType a owl:ObjectProperty ;
     rdfs:label "has source type"@en ;
-    rdfs:subPropertyOf <http://fuzzy-sl.squirrel.link/ontology/hasSource> .
+    rdfs:subPropertyOf ns1:hasSource .
 
-<http://fuzzy-sl.squirrel.link/ontology/high> a <http://fuzzy-sl.squirrel.link/ontology/CertaintyType>,
+ns1:high a ns1:CertaintyType,
         owl:NamedIndividual ;
     rdfs:label "high"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/iDAIgazetteer> a <http://fuzzy-sl.squirrel.link/ontology/Source>,
+ns1:iDAIgazetteer a ns1:Source,
         owl:NamedIndividual ;
     rdfs:label "iDAI.gazetter"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/image> a owl:ObjectProperty ;
+ns1:image a owl:ObjectProperty ;
     rdfs:label "has image"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/low> a <http://fuzzy-sl.squirrel.link/ontology/CertaintyType>,
+ns1:locatedInAdministrativeEntity a owl:ObjectProperty ;
+    rdfs:label "located in the administrative territorial entity"@en ;
+    ns1:EM true ;
+    ns1:GLM true ;
+    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P32> .
+
+ns1:low a ns1:CertaintyType,
         owl:NamedIndividual ;
     rdfs:label "low"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/medium> a <http://fuzzy-sl.squirrel.link/ontology/CertaintyType>,
+ns1:medium a ns1:CertaintyType,
         owl:NamedIndividual ;
     rdfs:label "medium"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/method> a owl:ObjectProperty ;
+ns1:method a owl:ObjectProperty ;
     rdfs:label "georeferencing method"@en ;
-    rdfs:domain <http://fuzzy-sl.squirrel.link/ontology/Place> ;
-    rdfs:range <http://fuzzy-sl.squirrel.link/ontology/MethodType> .
+    rdfs:domain ns1:Place ;
+    rdfs:range ns1:MethodType .
 
-<http://fuzzy-sl.squirrel.link/ontology/partOf> a owl:ObjectProperty ;
+ns1:partOf a owl:ObjectProperty ;
     rdfs:label "part of"@en ;
-    rdfs:domain <http://fuzzy-sl.squirrel.link/ontology/Place> ;
-    rdfs:range <http://fuzzy-sl.squirrel.link/ontology/Project> .
+    ns1:EM true ;
+    ns1:GLM true ;
+    rdfs:domain ns1:Place ;
+    rdfs:range ns1:Project ;
+    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P3> .
 
-<http://fuzzy-sl.squirrel.link/ontology/partlyMatch> a owl:ObjectProperty ;
+ns1:partlyMatch a owl:ObjectProperty ;
     rdfs:label "has partly match"@en ;
     rdfs:subPropertyOf skos:relatedMatch ;
     skos:definition "is used to state an associative mapping link between two places, in which one is part of another"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/relatedTo> a owl:ObjectProperty ;
+ns1:relatedTo a owl:ObjectProperty ;
     rdfs:label "related to"@en ;
-    rdfs:domain <http://fuzzy-sl.squirrel.link/ontology/Place> ;
+    rdfs:domain ns1:Place ;
     rdfs:range owl:Thing .
 
-<http://fuzzy-sl.squirrel.link/ontology/representativeGeometry> a owl:ObjectProperty ;
+ns1:representativeGeometry a owl:ObjectProperty ;
     rdfs:label "representative Geometry"@en ;
     rdfs:comment "e.g. centre point"@en ;
     rdfs:subPropertyOf geo:hasGeometry .
 
-<http://fuzzy-sl.squirrel.link/ontology/siteType> a owl:ObjectProperty ;
+ns1:siteType a owl:ObjectProperty ;
     rdfs:label "has site type"@en ;
-    rdfs:domain <http://fuzzy-sl.squirrel.link/ontology/Place> ;
-    rdfs:range <http://fuzzy-sl.squirrel.link/ontology/SiteType> .
+    ns1:EM true ;
+    ns1:GLM true ;
+    rdfs:domain ns1:Place ;
+    rdfs:range ns1:SiteType ;
+    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P1> .
 
-<http://fuzzy-sl.squirrel.link/ontology/spatialCloseMatch> a owl:ObjectProperty ;
+ns1:spatialCloseMatch a owl:ObjectProperty ;
     rdfs:label "has a spatial close match"@en ;
     rdfs:subPropertyOf skos:relatedMatch ;
     skos:definition "is used to state an associative mapping link between two places, which are spatially close to each other"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/spatialType> a owl:ObjectProperty ;
+ns1:spatialType a owl:ObjectProperty ;
     rdfs:label "has spatial type"@en ;
-    rdfs:domain <http://fuzzy-sl.squirrel.link/ontology/Place> ;
-    rdfs:range <http://fuzzy-sl.squirrel.link/ontology/SpatialType> .
+    ns1:EM true ;
+    ns1:GLM true ;
+    rdfs:domain ns1:Place ;
+    rdfs:range ns1:SpatialType ;
+    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P8> .
 
-<http://fuzzy-sl.squirrel.link/ontology/uncertain> a <http://fuzzy-sl.squirrel.link/ontology/CertaintyType>,
+ns1:uncertain a ns1:CertaintyType,
         owl:NamedIndividual ;
     rdfs:label "uncertain"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/Location> a owl:Class ;
+ns1:Location a owl:Class ;
     rdfs:label "Location"@en ;
     rdfs:subClassOf prov:Location .
 
-<http://fuzzy-sl.squirrel.link/ontology/hasSource> a owl:ObjectProperty ;
+ns1:hasSource a owl:ObjectProperty ;
     rdfs:label "has source"@en ;
-    rdfs:domain <http://fuzzy-sl.squirrel.link/ontology/Place> ;
-    rdfs:range <http://fuzzy-sl.squirrel.link/ontology/Source> .
+    rdfs:domain ns1:Place ;
+    rdfs:range ns1:Source .
 
-<http://fuzzy-sl.squirrel.link/ontology/Project> a owl:Class ;
+ns1:Project a owl:Class ;
     rdfs:label "Project"@en ;
     rdfs:subClassOf prov:Activity .
 
-<http://fuzzy-sl.squirrel.link/ontology/SiteType> a owl:Class ;
+ns1:SiteType a owl:Class ;
     rdfs:label "Site Type"@en ;
-    rdfs:subClassOf <http://fuzzy-sl.squirrel.link/ontology/Type> .
+    rdfs:subClassOf ns1:Type .
 
-<http://fuzzy-sl.squirrel.link/ontology/MethodType> a owl:Class ;
+ns1:MethodType a owl:Class ;
     rdfs:label "Method Type"@en ;
-    rdfs:subClassOf <http://fuzzy-sl.squirrel.link/ontology/Type> .
+    rdfs:subClassOf ns1:Type .
 
-<http://fuzzy-sl.squirrel.link/ontology/CertaintyType> a owl:Class ;
+ns1:CertaintyType a owl:Class ;
     rdfs:label "Certainty Type"@en ;
-    rdfs:subClassOf <http://fuzzy-sl.squirrel.link/ontology/Type> .
+    rdfs:subClassOf ns1:Type .
 
-<http://fuzzy-sl.squirrel.link/ontology/SourceType> a owl:Class ;
+ns1:SourceType a owl:Class ;
     rdfs:label "Source Type"@en ;
-    rdfs:subClassOf <http://fuzzy-sl.squirrel.link/ontology/Type> .
+    rdfs:subClassOf ns1:Type .
 
-<http://fuzzy-sl.squirrel.link/ontology/Type> a owl:Class ;
+ns1:Type a owl:Class ;
     rdfs:label "Type"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/Source> a owl:Class ;
+ns1:Source a owl:Class ;
     rdfs:label "Source"@en .
 
-<http://fuzzy-sl.squirrel.link/ontology/Place> a owl:Class ;
+ns1:Place a owl:Class ;
     rdfs:label "Place"@en ;
     rdfs:subClassOf geo:SpatialObject .
 
-<http://fuzzy-sl.squirrel.link/ontology/SpatialType> a owl:Class ;
+ns1:SpatialType a owl:Class ;
     rdfs:label "Spatial Type"@en ;
-    rdfs:subClassOf <http://fuzzy-sl.squirrel.link/ontology/Type> .
+    rdfs:subClassOf ns1:Type .
 

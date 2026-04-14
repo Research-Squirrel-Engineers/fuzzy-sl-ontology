@@ -235,8 +235,8 @@ var tree={
         "data": {
           "to": {
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
-              "instancecount": 2,
-              "http://www.w3.org/2002/07/owl#Class": 1
+              "instancecount": 3,
+              "http://www.w3.org/2002/07/owl#Class": 2
             },
             "http://www.w3.org/2000/01/rdf-schema#label": {
               "instancecount": 1
@@ -244,7 +244,7 @@ var tree={
           },
           "from": {}
         },
-        "instancecount": 3
+        "instancecount": 4
       },
       {
         "id": "http://fuzzy-sl.squirrel.link/ontology/Book",
@@ -291,11 +291,14 @@ var tree={
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
               "instancecount": 2,
               "http://www.w3.org/2002/07/owl#Class": 1
+            },
+            "http://www.w3.org/2000/01/rdf-schema#label": {
+              "instancecount": 1
             }
           },
           "from": {}
         },
-        "instancecount": 2
+        "instancecount": 3
       },
       {
         "id": "http://fuzzy-sl.squirrel.link/ontology/CampanianIgnimbriteProject",

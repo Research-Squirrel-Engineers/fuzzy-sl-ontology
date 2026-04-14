@@ -1,6 +1,11 @@
+@prefix ns1: <http://fuzzy-sl.squirrel.link/ontology/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://fuzzy-sl.squirrel.link/ontology/hasReference> a owl:DatatypeProperty ;
-    rdfs:label "has reference"@en .
+ns1:hasReference a owl:DatatypeProperty ;
+    rdfs:label "has reference"@en ;
+    ns1:EM true ;
+    ns1:GLM true ;
+    owl:equivalentProperty <https://fuzzy-sl.wikibase.cloud/entity/P11> .
 
